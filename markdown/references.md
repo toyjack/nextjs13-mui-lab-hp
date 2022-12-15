@@ -1,11 +1,11 @@
 ---
-title: Refenrences
+title: 関連業績
 ---
-## Taizo Yamada
+## 発表
 
-## Satoru Nakamura
+## 論文
 
-## Guanwei Liu
+## その他
 
 - aaa
 - aaa

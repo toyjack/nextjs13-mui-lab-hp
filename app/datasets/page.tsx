@@ -1,15 +1,14 @@
 import React from 'react'
-import getDatasetsData from '../../utils/getDatasetsData';
+import datasetJson from '../../data/datasets.json'
 
 async function DatasetsPage() {
-  const data = await getDatasetsData();
 
   return (
     <div>
-      {data.map((dataset: any) => (
-        <div key={dataset.dataset_id}>
-          <h3>{dataset.dataset_id}</h3>
-          <p>{dataset.dataset_id}</p>
+      {datasetJson.map((dataset, index) => (
+        <div key={index}>
+          <h3>{dataset.id}</h3>
+          <p>{dataset.name}</p>
         </div>
       ))}
     </div>

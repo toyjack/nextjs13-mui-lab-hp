@@ -1,29 +1,33 @@
 [
   {
-    "dataset_id": "kuzushiji",
-    "dataset_name_en": "Kuzushiji",
-    "dataset_name": "くずし字",
+    "id": "kuzushiji",
+    "name_en": "Kuzushiji",
+    "name": "くずし字",
+    "image_url":"/images/screenshot_kuzushiji.png",
     "description_en": "A dataset of kuzushiji",
     "description": "東京大学史料編纂所が公開する資料画像データの中から、くずし字画像を切り出したデータセットを公開します。"
   },
   {
-    "dataset_id": "kaodataset",
-    "dataset_name":"花押レイアウトデータセット",
-    "dataset_name_en":"",
+    "id": "kaodataset",
+    "name":"花押レイアウトデータセット",
+    "name_en":"",
+    "image_url":"/images/screenshot_kao.jpg",
     "description":"東京大学史料編纂所が公開する資料画像データの中から、「花押」に関するアノテーションデータを公開しています。",
     "description_en":""
   },
   {
-    "dataset_id": "rulsedataset",
-    "dataset_name":"定規データセット",
-    "dataset_name_en":"",
+    "id": "rulsedataset",
+    "name":"定規データセット",
+    "name_en":"",
+    "image_url":"/images/screenshot_kuzushiji.png",
     "description":"TODO",
     "description_en":""
   },
   {
-    "dataset_id": "layoutdataset",
-    "dataset_name":"レイアウトデータセット",
-    "dataset_name_en":"",
+    "id": "layoutdataset",
+    "name":"レイアウトデータセット",
+    "name_en":"",
+    "image_url":"/images/screenshot_kuzushiji.png",
     "description":"TODO",
     "description_en":""
   }

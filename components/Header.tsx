@@ -1,17 +1,29 @@
 'use client'
-
-import React from 'react'
-import { Toolbar,Typography, IconButton, Box } from '@mui/material'
+import React,{useState} from 'react'
+import { Toolbar,Typography, IconButton, Box, Menu, MenuItem } from '@mui/material'
 import { useRouter } from "next/navigation";
 import Link from '@mui/material/Link'
+import Image from 'next/image'
+import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 function Header() {
   const router = useRouter();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const menuLinks = [
-    { name: 'Datasets', href: '/datasets' },
-    { name: 'Services', href: '/services' },
-    { name: 'References', href: '/references'}
+    { name: 'データセット', href: '/datasets' },
+    { name: 'サービス', href: '/services' },
+    { name: '関連業績', href: '/references'}
   ]
+  
   return (
     <React.Fragment>
       <Toolbar
@@ -22,7 +34,7 @@ function Header() {
         }}
       >
         <IconButton onClick={() => router.push("/")}>
-          <div>logo</div>
+          <Image src="/logo.png" alt="logo" width={50} height={50} />
         </IconButton>
         <Typography
           component="h2"
@@ -34,10 +46,7 @@ function Header() {
         >
           Hi-Lab
         </Typography>
-        <Box
-          gap={2}
-          sx={{ flex: 1, display: { xs: "none", sm: "flex" } }}
-        >
+        <Box gap={2} sx={{ flex: 1, display: { xs: "none", sm: "flex" } }}>
           {menuLinks.map((link) => (
             <Link
               underline="hover"
@@ -52,13 +61,41 @@ function Header() {
         </Box>
 
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
-          <IconButton>
-            <div>lang</div>
+          <IconButton
+            id="lang-button"
+            aria-controls={open ? "lang-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            <TranslateRoundedIcon />
           </IconButton>
+          <Menu
+            id="lang-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "lang-button",
+            }}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+          >
+            <MenuItem onClick={handleClose}>日本語</MenuItem>
+            <MenuItem onClick={handleClose} disabled>
+              English
+            </MenuItem>
+          </Menu>
         </Box>
         <Box sx={{ display: { xs: "block", sm: "none" } }}>
           <IconButton>
-            <div>menu</div>
+            <MenuRoundedIcon />
           </IconButton>
         </Box>
       </Toolbar>

@@ -1,5 +1,5 @@
 import React from 'react'
-import getDatasetsData from '../../../utils/getDatasetsData';
+import datasetJson from '../../../data/datasets.json'
 
 function DatasetName(props: any) {
   const datasetId = props.params.datasetName;
@@ -10,10 +10,8 @@ function DatasetName(props: any) {
   )
 }
 export async function generateStaticParams() {
-  const datasets = await getDatasetsData();
-
-  return datasets.map((dataset: any) => ({
-    datasetName: dataset.dataset_id,
+  return datasetJson.map((dataset: any) => ({
+    datasetName: dataset.id,
   }));
 }
 export default DatasetName

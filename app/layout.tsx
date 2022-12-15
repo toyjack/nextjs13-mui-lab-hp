@@ -1,6 +1,7 @@
 "use client";
 import { Container, Paper, ThemeProvider, createTheme, ThemeOptions } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const themeOptions: ThemeOptions = {
@@ -37,7 +38,7 @@ export default function RootLayout({
             <main>{children}</main>
           </Container>
           <footer>
-            <Paper>footer</Paper>
+            <Footer />
           </footer>
         {/* </ThemeProvider> */}
       </body>

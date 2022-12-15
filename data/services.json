@@ -1,9 +1,18 @@
 [
   {
-    "service_id": "yaist",
-    "service_name": "YAIST",
-    "image_url":"/images/yaist.png",
-    "description_ja":"A tool ",
+    "id": "dips",
+    "name": "DIPS",
+    "name_en": "DIPS",
+    "image_url":"/images/screenshot_dips.png",
+    "description":"A tool for ...",
+    "description_en":"A tool ..."
+  },
+  {
+    "id": "yaist",
+    "name": "YAIST",
+    "name_en": "YAIST",
+    "image_url":"/images/screenshot_yaist.png",
+    "description":"A tool ",
     "description_en":"A tool "
   }
 ]

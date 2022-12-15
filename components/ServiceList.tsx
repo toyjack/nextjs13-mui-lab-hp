@@ -1,5 +1,6 @@
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 import React from "react";
+import serviceJson from "../data/services.json";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -55,21 +56,31 @@ function ServiceList() {
         We offer a wide range of services to help you study with ease.
       </Typography>
 
-      <Box sx={{ 
-        px: { xs: 0, sm: 6 },
-       }}>
+      <Box
+        sx={{
+          px: { xs: 0, sm: 6 },
+        }}
+      >
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="Item One" {...a11yProps(0)} />
+            {serviceJson.map((service, index) => (
+              <Tab label={service.name} {...a11yProps(index)} key={index}/>
+            ))}
+            {/* <Tab label="Item One" {...a11yProps(0)} />
             <Tab label="Item Two" {...a11yProps(1)} />
-            <Tab label="Item Three" {...a11yProps(2)} />
+            <Tab label="Item Three" {...a11yProps(2)} /> */}
           </Tabs>
         </Box>
-        <TabPanel value={value} index={0}>
+        {serviceJson.map((service, index) => (
+          <TabPanel value={value} index={index} key={index}>
+            {service.description}
+          </TabPanel>
+        ))}
+        {/* <TabPanel value={value} index={0}>
           Item One
         </TabPanel>
         <TabPanel value={value} index={1}>
@@ -77,7 +88,7 @@ function ServiceList() {
         </TabPanel>
         <TabPanel value={value} index={2}>
           Item Three
-        </TabPanel>
+        </TabPanel> */}
       </Box>
     </Box>
   );

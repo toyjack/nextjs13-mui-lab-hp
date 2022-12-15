@@ -5,6 +5,8 @@ import { Box } from "@mui/system";
 import React from "react";
 import { blue } from "@mui/material/colors";
 
+import datasetsJson from "../data/datasets.json";
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -78,19 +80,25 @@ function DatasetList() {
           variant="scrollable"
           sx={{ borderRight: 1, borderColor: "divider" }}
         >
-          <Tab label="Tab 1" {...a11yProps(0)} />
-          <Tab label="Tab 2" {...a11yProps(1)} />
-          <Tab label="Tab 3" {...a11yProps(2)} />
+          {datasetsJson.map((dataset, index) => (
+            <Tab
+              key={dataset.id}
+              label={dataset.name}
+              {...a11yProps(index)}
+              sx={{ color: "white" }}
+            />
+          ))}
         </Tabs>
-        <TabPanel value={value} index={0}>
-          one
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three
-        </TabPanel>
+        {datasetsJson.map((dataset, index) => (
+          <TabPanel key={dataset.id} value={value} index={index}>
+            <Typography variant="h5" color="white">
+              {dataset.name}
+            </Typography>
+            <Typography variant="body1" color="white">
+              {dataset.description}
+            </Typography>
+          </TabPanel>
+        ))}
       </Box>
     </Box>
   );
