@@ -1,0 +1,9 @@
+[
+  {
+    "service_id": "yaist",
+    "service_name": "YAIST",
+    "image_url":"/images/yaist.png",
+    "description_ja":"A tool ",
+    "description_en":"A tool "
+  }
+]
