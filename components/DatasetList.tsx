@@ -49,15 +49,17 @@ function DatasetList() {
 
   return (
     <Box
+      style={{
+        background: "linear-gradient(to right bottom, #1565C0, #42a5f5)",
+      }}
       sx={{
         py: { xs: 1, sm: 6 },
-        bgcolor: blue[400],
         boxShadow: { xs: 0, sm: 2 },
         borderRadius: { xs: 0, sm: 2 },
       }}
     >
       <Typography variant="h4" color="white" align="center">
-        Datasets
+        データセット
       </Typography>
       <Typography variant="body1" color="white" align="center">
         We provide datasets from historical materials for machine learning and

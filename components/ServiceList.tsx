@@ -50,7 +50,7 @@ function ServiceList() {
       }}
     >
       <Typography variant="h4" align="center">
-        Services
+        サービス
       </Typography>
       <Typography variant="body1" align="center">
         We offer a wide range of services to help you study with ease.
@@ -58,21 +58,19 @@ function ServiceList() {
 
       <Box
         sx={{
-          px: { xs: 0, sm: 6 },
+          px: { xs: 0, sm: 10 },
         }}
       >
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
+            variant="fullWidth"
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
           >
             {serviceJson.map((service, index) => (
-              <Tab label={service.name} {...a11yProps(index)} key={index}/>
+              <Tab label={service.name} {...a11yProps(index)} key={index} />
             ))}
-            {/* <Tab label="Item One" {...a11yProps(0)} />
-            <Tab label="Item Two" {...a11yProps(1)} />
-            <Tab label="Item Three" {...a11yProps(2)} /> */}
           </Tabs>
         </Box>
         {serviceJson.map((service, index) => (
@@ -80,15 +78,6 @@ function ServiceList() {
             {service.description}
           </TabPanel>
         ))}
-        {/* <TabPanel value={value} index={0}>
-          Item One
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three
-        </TabPanel> */}
       </Box>
     </Box>
   );
